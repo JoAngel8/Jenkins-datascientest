@@ -64,6 +64,10 @@ docker -v
 sudo usermod -aG docker jenkins
 ```
 
+**SED**
+``` bash
+sudo apt-get install sed -y
+```
 
 ## If required applications are installed
 ``` bash
