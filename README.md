@@ -69,19 +69,46 @@ sudo usermod -aG docker jenkins
 sudo apt-get install sed -y
 ```
 
+**GIT**
+```bash
+sudo apt install git -y
+```
+
 ## If required applications are installed
 ``` bash
-Kubectl installed
-$ k3s kubectl get nodes
+# Kubectl installed, verification
+k3s kubectl get nodes
 
-Jenkins access on Docker engine 
-$ sudo usermod -aG docker jenkins
+# Jenkins access on Docker engine 
+sudo usermod -aG docker jenkins
 
-Namespaces creation
-$ kubectl create namespace dev
-$ kubectl create namespace staging
-$ kubectl create namespace prod
+# Namespaces creation
+kubectl create namespace dev
+kubectl create namespace staging
+kubectl create namespace prod
 ```
+
+Générer depuis notre serveur un fichier de configuration Kubernetes
+```bash 
+mkdir ~/.kube
+sudo kubectl config view --raw > ~/.kube/config
+cat ~/.kube/config
+```
+
+
+```bash 
+
+```
+
+```bash 
+
+```
+
+```bash 
+
+```
+
+## 
 
 # Rappels 
 
