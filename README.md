@@ -83,7 +83,7 @@ $ kubectl create namespace staging
 $ kubectl create namespace prod
 ```
 
-## Remember 
+# Rappels 
 
 **SED**
 
