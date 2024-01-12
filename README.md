@@ -81,7 +81,39 @@ Namespaces creation
 $ kubectl create namespace dev
 $ kubectl create namespace staging
 $ kubectl create namespace prod
-
 ```
 
+## Remember 
 
+**SED**
+
+Retrouver une documentation plus complète sur la commande SED à l'adresse https://www.gnu.org/software/sed/manual/sed.html
+
+Command 
+```bash
+sed [-n] [-e] 'commande' 'fichier'
+sed [-n] -f 'fichierdescript' 'fichier'
+```
+
+Exemples
+```bash
+# Supprimer les lignes 1, 2, 5 dans le fichier
+sed -e '1d' -e '2d' -e '5d' datascientest.txt
+
+# Meme résultat 
+echo -e "1d\n2d\n5d" > sed.txt
+sed -f sed.txt datascientest.txt
+
+# chaque ligne est dupliquée
+sed  -e 'p' datascientest.txt
+
+# Une saut de ligne est insérée pour chaque ligne lue
+sed -e 'a\ ' datascientest.txt
+
+# Rechercher, remplacer dans l'ensemble du texte 
+sed -i 's/<reqex>/<texte_a_replacer>/g' <fichier>
+sed -i 's/Datascientest/Devuniversity/g' datascientest.txt
+
+# Rechercher, Remplacer pour chaque ligne la première occurence trouvée
+sed -i 's/Datascientest/Devuniversity/' datascientest.txt
+```
