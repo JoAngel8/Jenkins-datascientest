@@ -6,7 +6,7 @@ DOCKER_TAG = "v.${BUILD_ID}.0" // we will tag our images with the current build 
 }
 agent any // Jenkins will be able to select all available agents
 stages {
-        stage(' Docker Build'){ // docker build image stage
+        stage('Docker Build'){ // docker build image stage
             steps {
                 script {
                 sh '''
@@ -38,7 +38,7 @@ stages {
             }
 
         }
-        stage('Docker Push'){ //we pass the built image to our docker hub account 
+        stage(' Docker Push'){ //we pass the built image to our docker hub account
             environment
             {
                 DOCKER_PASS = credentials("DOCKER_HUB_PASS") // we retrieve  docker password from secret text called docker_hub_pass saved on jenkins
@@ -131,7 +131,7 @@ post { // send email when the job has failed
     // ..
     failure {
         echo "This will run if the job failed"
-        mail to: "gjosephangelique@gmail.com",
+        mail to: "fall-lewis.y@datascientest.com",
              subject: "${env.JOB_NAME} - Build # ${env.BUILD_ID} has failed",
              body: "For more info on the pipeline failure, check out the console output at ${env.BUILD_URL}"
     }
